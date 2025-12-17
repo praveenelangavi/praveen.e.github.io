@@ -1,0 +1,326 @@
+:root{
+  --bg:#060606;
+  --card:#0f1113;
+  --accent:#d4af37;
+  --muted:#9aa0a6;
+  --glass: rgba(255,255,255,0.03);
+  --maxwidth:1200px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:radial-gradient(1200px 600px at 10% 10%, rgba(212,175,55,0.03), transparent), var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e9e9e9}
+a{color:inherit}
+.header{
+  position:fixed;left:16px;right:16px;top:12px;display:flex;justify-content:space-between;align-items:center;z-index:50;padding:8px;
+}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffde7a);display:grid;place-items:center;color:#071217;font-weight:700}
+.brand-text .name{font-weight:700}
+.brand-text .title{font-size:12px;color:var(--muted)}
+.nav{display:flex;gap:8px}
+.nav-btn{background:transparent;border:none;color:inherit;padding:8px 12px;border-radius:8px;cursor:pointer;opacity:0.9}
+.nav-btn.active{background:rgba(212,175,55,0.09);box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+.bg-particles{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* fullpage container */
+#fullpage{position:relative;z-index:10}
+.section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 80px}
+.section-inner{width:100%;max-width:var(--maxwidth);margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:28px;align-items:center}
+.section .stack{grid-template-columns:1fr}
+.left{padding:18px}
+.big{font-size:42px;margin:0 0 12px 0;line-height:1.02}
+.lead{color:var(--muted);max-width:680px;line-height:1.6}
+.ctas{display:flex;gap:12px;margin-top:18px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;color:inherit;border:1px solid transparent;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#ffde7a);color:#071217;font-weight:700}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04)}
+.icons-row{display:flex;gap:12px;margin-top:14px}
+.social{padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);text-decoration:none;color:var(--muted);font-size:14px}
+
+/* right card */
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(0,0,0,0.12));border-radius:16px;padding:18px;backdrop-filter:blur(6px);box-shadow:0 8px 30px rgba(2,6,10,0.6)}
+.three-box{height:360px;border-radius:10px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.05))}
+
+/* gradient blur */
+.blur.gradient{position:relative;height:80px;margin-top:12px;border-radius:12px;filter:blur(18px);background:linear-gradient(90deg, rgba(212,175,55,0.06), rgba(125,211,252,0.04));}
+
+/* achievements */
+.achievements{display:flex;gap:12px;margin-top:24px}
+.card-mini{background:var(--glass);padding:12px;border-radius:12px;color:var(--muted)}
+
+/* projects grid */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:18px}
+.project-card{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.08));display:flex;flex-direction:column;gap:8px;cursor:pointer;overflow:hidden}
+.project-preview{height:140px;border-radius:8px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05))}
+
+/* skills */
+.skills-list{display:grid;gap:12px;margin-top:12px}
+.skill-row{display:flex;align-items:center;gap:12px}
+.skill-avatar{width:52px;height:52px;border-radius:10px;background:rgba(255,255,255,0.03);display:grid;place-items:center;font-weight:700}
+.skill-bar{flex:1;height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden}
+.skill-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),#ffde7a);width:0%}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+.contact-form input, .contact-form textarea{width:100%;padding:12px;border-radius:10px;border:none;background:rgba(255,255,255,0.02);color:inherit}
+.form-status{margin-top:12px;color:var(--muted)}
+
+/* footer */
+.footer{text-align:center;padding:18px;color:var(--muted);position:relative;z-index:20}
+
+/* responsiveness */
+@media (max-width:1000px){
+  .section-inner{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .right{order:-1}
+  .three-box{height:280px}
+}
+@media (max-width:600px){
+  .brand-text{display:none}
+  .logo{width:44px;height:44px}
+  .big{font-size:28px}
+}
+/* ---------- HERO PHOTO CARD ---------- */
+.hero-photo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid rgba(212,175,55,0.25);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.6);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-photo-info {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hero-photo-info h3 {
+  color: var(--accent);
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .hero-photo {
+    max-width: 260px;
+  }
+}
+/* ===============================
+   PROJECT DETAILS MODAL
+================================ */
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.project-modal-content {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(0,0,0,0.3)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 24px;
+  max-width: 520px;
+  width: 92%;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.project-modal-content h2 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.project-modal-content h4 {
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+.project-modal-content p,
+.project-modal-content li {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.project-modal-content ul {
+  padding-left: 18px;
+}
+
+/* Close button */
+.close-modal {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* ===============================
+   SKILLS SECTION ENHANCEMENT
+================================ */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.skills-content h2 {
+  margin-bottom: 14px;
+}
+
+.skills-intro {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  max-width: 520px;
+}
+
+.skills-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+
+.skills-points li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.skills-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.skills-note {
+  font-size: 13px;
+  color: var(--muted);
+  opacity: 0.85;
+  max-width: 520px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===============================
+   RESUME SECTION ENHANCEMENTS
+================================ */
+
+.resume-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.resume-heading {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.resume-subheading {
+  color: var(--accent);
+  margin-top: 10px;
+}
+
+.resume-text {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.resume-block {
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.resume-block h4 {
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.resume-block ul {
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.resume-projects {
+  color: var(--muted);
+  line-height: 1.7;
+  padding-left: 18px;
+}
+
+.resume-btn {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

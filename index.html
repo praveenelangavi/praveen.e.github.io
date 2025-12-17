@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Praveen — Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- CDN: Three.js (r150), tsparticles, GSAP -->
+  <script src="https://unpkg.com/three@0.150.0/build/three.min.js" defer></script>
+  <script src="https://unpkg.com/tsparticles@2.10.1/tsparticles.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollToPlugin.min.js" defer></script>
+
+  <!-- icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- particles background -->
+  <div id="tsparticles" class="bg-particles"></div>
+
+  <header class="header">
+    <div class="brand">
+      <div class="logo">PE</div>
+      <div class="brand-text">
+        <div class="name">Praveen E</div>
+        <div class="title">Aspiring Cloud Application Developer</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <button data-target="hero" class="nav-btn active">Home</button>
+      <button data-target="projects" class="nav-btn">Projects</button>
+      <button data-target="skills" class="nav-btn">Skills</button>
+      <button data-target="resume" class="nav-btn">Resume</button>
+      <button data-target="contact" class="nav-btn">Contact</button>
+    </nav>
+  </header>
+
+  <main id="fullpage">
+    <!-- HERO / ABOUT -->
+    <section id="hero" class="section">
+      <div class="section-inner">
+        <div class="left">
+          <h1 class="big">Hi, I'm <span class="accent">Praveen</span></h1>
+          <p class="lead">
+  Cloud Application Developer in the making, passionate about learning,
+  problem-solving, and creating scalable applications with Java, Python,
+  and cloud platforms.
+</p>
+
+          <div class="ctas">
+            <a class="btn primary" href="#contact" data-scroll>Contact / Hire Me</a>
+            <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+          </div>
+          <div class="icons-row">
+            <a href="https://www.linkedin.com/in/praveen-e-b06769327" target="_blank" rel="noreferrer" class="social">LinkedIn</a>
+            <a href="https://github.com" target="_blank" rel="noreferrer" class="social">GitHub</a>
+          </div>
+        </div>
+
+       <div class="right card hero-photo-card">
+  <div class="hero-photo">
+    <img src="image/profile.jpg" alt="Praveen E">
+
+  </div>
+
+  <div class="hero-photo-info">
+    <h3>Education</h3>
+    <p>
+      St Joseph's Institute of Technology<br>
+      2024–2028 (CGPA 7.98)
+    </p>
+
+    <h3 style="margin-top:14px">Certifications</h3>
+    <p>
+      AWS Foundations, AWS Emerging Talent Community,<br>
+      Cloud Quest Linux, Networking Basics
+    </p>
+  </div>
+</div>
+</section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-inner stack">
+        <h2>Projects</h2>
+        <div class="projects-grid" id="projects-grid">
+          <!-- JS will populate cards with 3D previews -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+  <div class="section-inner skills-grid">
+
+    <!-- LEFT CONTENT -->
+    <div class="skills-content">
+      <h2>Skills</h2>
+
+      <p class="skills-intro">
+        A comprehensive overview of my technical skill set, built through
+        academic coursework, hands-on projects, internships, certifications,
+        and continuous self-learning.
+      </p>
+
+      <ul class="skills-points">
+        <li>
+          Strong foundation in <strong>programming, data structures, and problem-solving</strong>
+          using Java, Python, and C.
+        </li>
+        <li>
+          Practical experience working with <strong>Linux environments</strong>,
+          shell scripting, and system-level operations.
+        </li>
+        <li>
+          Hands-on exposure to <strong>AWS cloud services</strong> including EC2,
+          RDS, Lambda, and CloudWatch.
+        </li>
+        <li>
+          Comfortable building, testing, and deploying applications using
+          <strong>modern development workflows</strong>.
+        </li>
+        <li>
+          Good understanding of <strong>computer networking fundamentals</strong>
+          such as TCP/IP, DNS, HTTP, and basic security concepts.
+        </li>
+        <li>
+          Actively improving skills through <strong>projects, certifications,
+          and real-world practice</strong>.
+        </li>
+      </ul>
+
+      <p class="skills-note">
+        <strong>Note:</strong> Skill percentages reflect my current confidence
+        and real-world exposure — not just theoretical knowledge.
+      </p>
+    </div>
+
+    <!-- RIGHT: SKILL BARS (UNCHANGED) -->
+    <div class="skills-list" id="skills-list">
+      <!-- injected by JS -->
+    </div>
+
+  </div>
+</section>
+
+
+   <section id="resume" class="section">
+  <div class="section-inner stack">
+    <h2>Resume</h2>
+
+    <div class="card resume-card">
+
+  <!-- ABOUT -->
+  <h3 style="color:var(--accent);margin-bottom:8px">Professional Summary</h3>
+  <p style="color:var(--muted);line-height:1.7">
+    Aspiring Cloud Application Developer with a strong foundation in programming,
+    cloud fundamentals, and Linux-based systems. I enjoy building scalable,
+    efficient applications and continuously improving my skills through hands-on
+    projects, coursework, and certifications. Highly motivated to grow in a
+    cloud-focused development role.
+  </p>
+
+  <!-- EDUCATION -->
+  <h3 style="color:var(--accent);margin-top:22px">Education</h3>
+  <ul style="color:var(--muted);line-height:1.8">
+    <li>
+      <strong>B.Tech – Information Technology</strong><br>
+      St. Joseph’s Institute of Technology, Chennai<br>
+      <span style="font-size:13px">2024 – 2028 | CGPA: 7.98</span>
+    </li>
+  </ul>
+  
+
+  <!-- EXPERIENCE -->
+  <h3 style="color:var(--accent);margin-top:22px">Experience</h3>
+  <ul style="color:var(--muted);line-height:1.8">
+    <li>
+      <strong>Java Developer Intern</strong> – Next Technology, Salem<br>
+      <span style="font-size:13px">
+        • Worked on Java-based applications and backend logic<br>
+        • Assisted in debugging, testing, and improving application performance<br>
+        • Gained exposure to real-world development workflows
+      </span>
+    </li>
+  </ul>
+
+  <!-- SKILLS SUMMARY -->
+  <h3 style="color:var(--accent);margin-top:22px">Technical Skills</h3>
+  <ul style="color:var(--muted);line-height:1.8">
+    <li><strong>Programming:</strong> Java, Python, C</li>
+    <li><strong>Cloud & DevOps:</strong> AWS (EC2, RDS, Lambda), Docker</li>
+    <li><strong>Operating Systems:</strong> Linux (CLI, scripting basics)</li>
+    <li><strong>Networking:</strong> Networking fundamentals & protocols</li>
+    <li><strong>Tools:</strong> Git, VS Code, MySQL</li>
+  </ul>
+
+  <!-- CERTIFICATIONS -->
+  <h3 style="color:var(--accent);margin-top:22px">Certifications</h3>
+  <ul style="color:var(--muted);line-height:1.8">
+    <li>AWS Foundations</li>
+    <li>AWS Emerging Talent Community</li>
+    <li>Cloud Quest – Linux</li>
+    <li>Networking Basics</li>
+  </ul>
+
+  <!-- GOALS -->
+  <h3 style="color:var(--accent);margin-top:22px">Career Objective</h3>
+  <p style="color:var(--muted);line-height:1.7">
+    To secure an entry-level Cloud / Software Development role where I can apply
+    my technical knowledge, gain industry experience, and contribute to building
+    reliable and scalable cloud-based solutions.
+  </p>
+
+  <!-- BUTTON -->
+  <a class="btn primary"
+     href="resume.pdf"
+     target="_blank"
+     style="margin-top:22px;display:inline-block">
+    Open Full Resume (PDF)
+  </a>
+
+</div>
+
+  </div>
+</section>
+
+
+    <!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <h2>Contact</h2>
+    <p style="color:var(--muted);max-width:640px;line-height:1.6;margin-bottom:18px">
+      I am always open to connecting with professionals to discuss opportunities, projects, internships, or knowledge sharing in the fields of cloud computing and software development. I would be glad to engage in meaningful conversations and explore potential collaborations.
+    </p>
+
+    <div class="contact-grid">
+      <form id="contact-form" class="contact-form">
+        <input id="name" name="name" placeholder="Your name" required />
+        <input id="email" name="email" type="email" placeholder="Your email" required />
+        <textarea id="message" name="message" placeholder="Message" rows="6" required></textarea>
+        <button class="btn primary" type="submit" id="send-btn">Send Message</button>
+        <div id="form-status" class="form-status" role="status"></div>
+      </form>
+
+      <div class="contact-info card">
+        <h3 style="color:var(--accent)">Get in Touch</h3>
+      
+  <p style="color:var(--muted);line-height:1.6;margin-bottom:14px">
+  I welcome messages regarding internships, project collaborations, freelance opportunities, or discussions about cloud computing and software development. I typically respond within 24 hours.
+</p>
+
+<p><strong>Email:</strong>
+  <a href="mailto:praveenelangavii@gmail.com">
+    praveenelangavii@gmail.com
+  </a>
+</p>
+
+  <p><strong>Phone:</strong> +91 93637 38665</p>
+
+  <div style="margin-top:14px">
+    <strong>Find me on:</strong>
+    <div class="social-row" style="margin-top:8px">
+      <a href="https://www.linkedin.com/in/praveen-e-b06769327" target="_blank">
+        LinkedIn
+      </a>
+      <a href="https://github.com/praveenelangavi/praveen.git" target="_blank">
+        GitHub
+      </a>
+      <a href="https://leetcode.com/u/LfzdMPbNZU/" target="_blank">
+        LeetCode
+      </a>
+    </div>
+  </div>
+
+  <p style="color:var(--muted);font-size:13px;margin-top:16px">
+    📍 Open to remote opportunities & internships
+    <h3 style="color:var(--accent);margin-bottom:10px">Send a Message</h3>
+<p style="color:var(--muted);font-size:14px;margin-bottom:12px">
+  Have a question or proposal? Drop a message and I’ll get back to you.
+</p>
+
+  </p>
+</div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Praveen — Built with Three.js • tsparticles • GSAP
+  </footer>
+  <div id="project-modal" class="project-modal hidden">
+  <div class="project-modal-content">
+    <button class="close-modal" id="close-modal">×</button>
+
+    <h2 id="modal-title"></h2>
+    <p id="modal-description"></p>
+
+    <h4>Technologies Used</h4>
+    <ul id="modal-tech"></ul>
+
+    <h4>Key Features</h4>
+    <ul id="modal-features"></ul>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
